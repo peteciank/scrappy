@@ -18,17 +18,15 @@ This app retrieves the list of the **S&P 500** (from Wikipedia) and its correspo
 st.sidebar.header('User Input Features')
 
 # Web scraping of S&P 500 data
-#
-@st.cache
 
-sector = df.groupby('anio')
+#sector = df.groupby('anio')
 
 # Sidebar - Sector selection
-sorted_sector_unique = sorted( df['anio'].unique() )
-selected_sector = st.sidebar.multiselect('mes', sorted_sector_unique, sorted_sector_unique)
+#sorted_sector_unique = sorted( df['anio'].unique() )
+#selected_sector = st.sidebar.multiselect('mes', sorted_sector_unique, sorted_sector_unique)
 
 # Filtering data
-df_selected_sector = df[ (df['anio'].isin(selected_sector)) ]
+#df_selected_sector = df[ (df['anio'].isin(selected_sector)) ]
 
 st.header('Cotizacion del dolar por año')
 st.write('Data Dimension: ' + str(df_selected_sector.shape[0]) + ' rows and ' + str(df_selected_sector.shape[1]) + ' columns.')
