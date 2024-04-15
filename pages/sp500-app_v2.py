@@ -10,9 +10,9 @@ from pages.menu import menu
 st.title('S&P 500 App')
 
 st.markdown("""
-This app retrieves the list of the **S&P 500** (from a pre-existing dataset) and its corresponding **stock closing price** (year-to-date)!
-* **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy, matplotlib
-""")
+            This app retrieves the list of the **S&P 500** (from a pre-existing dataset) and its corresponding **stock closing price** (year-to-date)!
+            * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy, matplotlib
+            """)
 
 
 menu()
@@ -29,15 +29,15 @@ def load_data():
 with st.sidebar:
     # Setting Fixed Width
     st.markdown(
-    """
-    <style>
-        section[data-testid="stSidebar"] {
-            width: 400px !important; # Set the width to your desired value
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-    )
+                """
+                <style>
+                    section[data-testid="stSidebar"] {
+                        width: 400px !important; # Set the width to your desired value
+                    }
+                </style>
+                """,
+                unsafe_allow_html=True,
+                )
 
 
 
