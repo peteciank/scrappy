@@ -20,7 +20,7 @@ st.markdown("""
 
 menu()
 
-ALPHA_VANTAGE_API_KEY = st.secrets(ALPHA_KEY)
+ALPHA_VANTAGE_API_KEY = st.secrets("ALPHA_KEY")
 
 def fetch_sp500_list():
     # Your existing fetch_sp500_list function
