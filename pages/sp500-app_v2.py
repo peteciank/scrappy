@@ -7,6 +7,8 @@ import pandas_datareader.data as web
 import streamlit.components.v1 as components
 from pages.menu import menu
 
+st.set_page_config("S&P 500 Webscrap - v1", "💹", layout="wide")
+
 st.title('S&P 500 App')
 
 st.markdown("""
