@@ -3,3 +3,4 @@ pandas
 base58
 matplotlib
 numpy
+pandas_datareader
