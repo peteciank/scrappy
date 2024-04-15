@@ -3,6 +3,9 @@ import streamlit.components.v1 as components
 from menu import menu
 
 st.title("Webscrapping Lab")
+
+menu()
+
 st.markdown("""<h3>Welcome to my Webscrapping Lab</h3>
             The  one technique I'm using is table detection. 
             Despite this is table detection, I'm using my knowledge about the table 
@@ -40,4 +43,4 @@ components.html(
 height=300,
 )
 
-menu()
+
