@@ -6,6 +6,17 @@ from bs4 import BeautifulSoup
 import streamlit.components.v1 as components
 from pages.menu import menu
 
+
+st.set_page_config("S&P 500 Webscrap - v1", "💹", layout="wide")
+
+st.title('S&P 500 - List of Companies')
+
+st.markdown("""
+            This app retrieves the list of the **S&P 500** (from a pre-existing dataset in github).
+            * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy
+            """)
+
+
 menu()
 
 ALPHA_VANTAGE_API_KEY = 'XQZ97II2935QC77J'

@@ -4,10 +4,19 @@ from bs4 import BeautifulSoup
 import streamlit.components.v1 as components
 from pages.menu import menu
 
+st.set_page_config("S&P 500 Webscrap - v1", "💹", layout="wide")
+
+
 menu()
 def main():
-    st.title('S&P 500 Companies List')
-    st.write('This app displays a list of companies in the S&P 500.')
+
+    st.title('S&P 500 - List of Companies')
+
+    st.markdown("""
+                This app retrieves the list of the **S&P 500** (from a pre-existing dataset in github).
+                * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy
+                """)
+
 
     if st.button('Fetch S&P 500 Companies'):
         companies = fetch_sp500_list()

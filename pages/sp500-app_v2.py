@@ -9,11 +9,11 @@ from pages.menu import menu
 
 st.set_page_config("S&P 500 Webscrap - v1", "💹", layout="wide")
 
-st.title('S&P 500 App')
+st.title('S&P 500 - List of Companies')
 
 st.markdown("""
-            This app retrieves the list of the **S&P 500** (from a pre-existing dataset) and its corresponding **stock closing price** (year-to-date)!
-            * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy, matplotlib
+            This app retrieves the list of the **S&P 500** (from a pre-existing dataset in github).
+            * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy
             """)
 
 
