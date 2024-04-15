@@ -1,5 +1,4 @@
 import streamlit as st
-#import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
 import requests
@@ -9,6 +8,7 @@ from pages.menu import menu
 
 menu()
 
+ALPHA_VANTAGE_API_KEY = 'XQZ97II2935QC77J'
 
 def fetch_sp500_list():
     # Your existing fetch_sp500_list function
@@ -29,7 +29,7 @@ def fetch_sp500_list():
         companies.append(company)
     
     return companies
-    #pass
+
 with st.sidebar:
     # Setting Fixed Width
     st.markdown(
@@ -43,10 +43,19 @@ with st.sidebar:
     unsafe_allow_html=True,
     )
 
-def get_stock_data(ticker, period="1mo"):
-    stock = yf.Ticker(ticker)
-    hist = stock.history(period=period)
-    return hist
+def get_stock_data(ticker, output_size="compact"):
+    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol={ticker}&apikey={ALPHA_VANTAGE_API_KEY}&outputsize={output_size}"
+    response = requests.get(url)
+    data = response.json()
+    if "Monthly Time Series" in data:
+        df = pd.DataFrame(data["Monthly Time Series"]).T
+        df.index = pd.to_datetime(df.index)
+        df.columns = ["open", "high", "low", "close", "volume"]
+        df = df.astype(float)
+        return df
+    else:
+        st.write("Error fetching data.")
+        return None
 
 def main():
     st.title('S&P 500 Companies List and Stock Data')
@@ -61,16 +70,17 @@ def main():
     if st.button('Fetch Stock Data'):
         symbol = company_symbols[selected_company]
         data = get_stock_data(symbol)
-        st.write(f"Displaying stock data for {selected_company} ({symbol})")
+        if data is not None:
+            st.write(f"Displaying stock data for {selected_company} ({symbol})")
 
-        # Plotting the closing prices
-        plt.figure(figsize=(10, 5))
-        plt.plot(data.index, data['Close'], marker='o')
-        plt.title(f"Closing Prices of {selected_company}")
-        plt.xlabel('Date')
-        plt.ylabel('Closing Price')
-        plt.grid(True)
-        st.pyplot(plt)
+            # Plotting the closing prices
+            plt.figure(figsize=(10, 5))
+            plt.plot(data.index, data['close'], marker='o')
+            plt.title(f"Closing Prices of {selected_company}")
+            plt.xlabel('Date')
+            plt.ylabel('Closing Price')
+            plt.grid(True)
+            st.pyplot(plt)
 
 if __name__ == "__main__":
     main()
