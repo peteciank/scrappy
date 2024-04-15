@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas_datareader.data as web
 import streamlit.components.v1 as components
-
+from pages.menu import menu
 
 st.title('S&P 500 App')
 
@@ -13,6 +13,9 @@ st.markdown("""
 This app retrieves the list of the **S&P 500** (from a pre-existing dataset) and its corresponding **stock closing price** (year-to-date)!
 * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy, matplotlib
 """)
+
+
+menu()
 
 st.sidebar.header('User Input Features')
 
@@ -35,32 +38,7 @@ with st.sidebar:
     """,
     unsafe_allow_html=True,
     )
-    # List of pages
-    pages = {
-        "1️⃣ Webscrap using SSL Technique": "./pages/sp500-app_v1.py",
-        "2️⃣ Webscrap using HTTP Technique": "./pages/sp500-app_v2.py",
-        "3️⃣ Webscrap using Table Detection Technique": "./pages/sp500-app_v3.py",
-        "4️⃣ Webscrap using Table Detection 2 Technique": "./pages/sp500-app_v4.py"
-    }
 
-    # Dropdown to select the page
-    selected_page = st.selectbox("Select a page:", list(pages.keys()))
-
-    # Button to switch page
-    switch_page = st.button("Switch page")
-    if switch_page:
-        # Switch to the selected page
-        page_file = pages[selected_page]
-        st.switch_page(page_file)
-
-    components.html(
-        """
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="pedrociancaglini" data-version="v1">
-        <a class="badge-base__link LI-simple-link" href="https://es.linkedin.com/in/pedrociancaglini/en?trk=profile-badge"></a></div>
-        """,
-    height=300,
-    )
 
 
 df = load_data()
