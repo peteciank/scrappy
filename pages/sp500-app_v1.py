@@ -116,7 +116,7 @@ try:
 
 
 except Exception as e:
-    st.warning(e)
+    st.warning("Ups, there was a problem accessing to the source using this technique. It is probably because the source changed the endpoint. The technical error is: " + e)
 
 
 

@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 
 def menu():
     st.sidebar.page_link("Home.py", label="Home")
-    st.sidebar.page_link("pages/sp500-app_v1.py", label="SP 500 SSL WebScrap 1")
+    #st.sidebar.page_link("pages/sp500-app_v1.py", label="SP 500 SSL WebScrap 1")
     #st.sidebar.markdown("This is the first version of this app, trying to access to Wikipedia using SSL.")
 
 
