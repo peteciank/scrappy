@@ -4,6 +4,9 @@ from menu import menu
 
 st.title("Webscrapping Lab")
 
+st.set_option("client.showSidebarNavigation", False)
+
+
 menu()
 
 st.markdown("""<h3>Welcome to my Webscrapping Lab</h3>
