@@ -10,13 +10,13 @@ def menu():
 
 
 
-    st.sidebar.page_link("pages/sp500-app_v2.py", label="SP 500 SSL WebScrap 2")
+    st.sidebar.page_link("pages/sp500-app_v2.py", label="SP 500 - v1")
     #st.sidebar.markdown("This is the second version of this app, trying to access to Wikipedia using HTTP.")
 
 
 
-    st.sidebar.page_link("pages/sp500-app_v3.py", label="SP 500 SSL WebScrap 3")
-    st.sidebar.page_link("pages/sp500-app_v4.py", label="SP 500 SSL WebScrap 4")
+    st.sidebar.page_link("pages/sp500-app_v3.py", label="SP 500 - v2")
+    st.sidebar.page_link("pages/sp500-app_v4.py", label="SP 500 - v3")
 
     with st.sidebar:
 
