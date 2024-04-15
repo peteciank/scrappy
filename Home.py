@@ -1,6 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
-
+from menu import menu
 
 st.title("Webscrapping Lab")
 st.markdown("""<h3>Welcome to my Webscrapping Lab</h3>
@@ -39,3 +39,5 @@ components.html(
     """,
 height=300,
 )
+
+menu()
