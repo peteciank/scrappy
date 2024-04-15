@@ -69,8 +69,6 @@ def get_stock_data(ticker, output_size="compact"):
         return None
 
 def main():
-    st.title('S&P 500 Companies List and Stock Data')
-    st.write('This app displays a list of companies in the S&P 500 and their stock closing prices.')
 
     companies = fetch_sp500_list()
     company_names = [company['Name'] for company in companies]
