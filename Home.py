@@ -6,6 +6,12 @@ from pages.menu import menu
 st.title("Webscrapping Lab")
 #st.set_option("client.showSidebarNavigation", False)
 
+
+st.title("Webscrapping Lab")
+
+st.set_option("client.showSidebarNavigation", False)
+
+
 menu()
 
 st.markdown("""<h3>Welcome to my Webscrapping Lab</h3>
@@ -44,3 +50,5 @@ components.html(
     """,
 height=300,
 )
+
+
