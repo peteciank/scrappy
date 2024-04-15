@@ -6,17 +6,17 @@ from pages.menu import menu
 
 st.set_page_config("S&P 500 Webscrap - v1", "💹", layout="wide")
 
+st.title('S&P 500 - List of Companies')
 
+st.markdown("""
+            This app retrieves the list of the **S&P 500** from Wikipedia, using Webscraping.
+            * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy, matplotlib, beautifulSoup
+            """)
+
+# Including Menu with access to Different Pages
 menu()
+
 def main():
-
-    st.markdown("""
-                This app retrieves the list of the **S&P 500** from Wikipedia, using Webscraping.
-                * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy, matplotlib, beautifulSoup
-                """)
-
-
-
     if st.button('Fetch S&P 500 Companies'):
         companies = fetch_sp500_list()
         st.write(f"Found {len(companies)} companies.")

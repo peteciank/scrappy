@@ -13,13 +13,14 @@ st.title('S&P 500 - List of Companies')
 
 st.markdown("""
             This app retrieves the list of the **S&P 500** from Wikipedia, using Webscraping.
-            * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy, matplotlib, beautifulSoup
+            * **Python libraries:** base64, pandas, streamlit, pandas_datareader, numpy, matplotlib, beautifulSoup. 
+            Stock pricing retrived using Alpha Vantage API. 
             """)
 
 
 menu()
 
-ALPHA_VANTAGE_API_KEY = 'XQZ97II2935QC77J'
+ALPHA_VANTAGE_API_KEY = st.secrets(ALPHA_KEY)
 
 def fetch_sp500_list():
     # Your existing fetch_sp500_list function
